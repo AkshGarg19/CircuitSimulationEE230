@@ -1,0 +1,23 @@
+High-pass Filter
+
+.include ua741.txt
+
+
+x1 1 2 3 4 2 ua741
+l 1 0 1
+r 1 5 6.8k
+vin 5 0 dc 0 ac 1
+vcc 3 0 15
+vdd 4 0 -15
+
+
+.ac dec 10 1 100k
+
+.control
+
+run
+
+plot vdb(2)
+
+.endc
+.end

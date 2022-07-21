@@ -1,0 +1,26 @@
+Photodiode Amplifier Circuit
+
+
+.include lm324.txt
+
+
+x1 1 2 3 4 5 LM324
+r2 6 1 10k
+r1 1 0 10k
+rg 2 7 10k
+rf 2 5 160k
+vcc 3 0 5
+vdd 4 0 0
+vin 7 0 
+vref 6 0 1.22
+
+.dc vin 0 2 2m
+
+.control
+
+run
+
+plot v(5)
+
+.endc
+.end

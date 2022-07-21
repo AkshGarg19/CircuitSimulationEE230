@@ -1,0 +1,36 @@
+Instrumental Amplifier Circuit
+
+.include TL084.txt
+
+
+x1 1 2 3 4 5 TL084
+x2 6 7 3 4 10 TL084
+x3 8 9 3 4 11 TL084
+
+*amplification of just 30
+r1 2 7 1k
+r2x 2 5 1k
+r2 7 10 1k
+r3 8 10 1k
+r3x 9 5 1k
+r4 9 11 10k
+r4x 8 0 10k
+
+vcc 3 0 12
+vdd 4 0 -12
+v1 1 0 sin(0 100m 1k 0 0) 
+v2 6 0 sin(0 -100m 1k 0 0) 
+
+
+.tran 5u 5m
+
+.control
+
+run
+
+
+plot v(11) v(1)-v(6)
+
+
+.endc
+.end

@@ -1,0 +1,3 @@
+Simulation:
+Vth = 6.2V
+Vtl = -6.2V

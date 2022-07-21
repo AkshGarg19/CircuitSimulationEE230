@@ -1,0 +1,26 @@
+Wien-bridge oscillator
+
+.include ua741.txt
+
+
+x1 1 2 3 4 5 ua741
+r1 2 0 1k
+r2 2 5 2k
+r 1 0 160
+c 1 0 0.1u
+rx 6 5 160
+cx 1 6 0.1u
+vcc 3 0 15
+vdd 4 0 -15
+
+
+.tran 5u 1000.5m 1000m
+
+.control
+
+run
+
+plot v(5)
+
+.endc
+.end

@@ -1,0 +1,37 @@
+Instrumental Amplifier Circuit
+
+.include TL084.txt
+.include 1N4148_1.txt
+
+
+x1 1 2 3 4 2 TL084
+x2 0 5 3 4 6 TL084
+x3 11 7 3 4 8 TL084
+x4 8 9 3 4 10 TL084
+
+r1 6 7 10k
+rx 7 8 10k
+r2 9 0 1.1k
+r3 9 10 19.5k
+r 2 5 18k
+D 5 6 1N4148
+
+vcc 3 0 15
+vdd 4 0 -15
+vin 1 0 dc 0 
+vo 11 0 -0.219
+
+
+.dc vin 0 10 0.1
+
+.control
+
+run
+
+
+plot v(10)
+print v(10)
+
+
+.endc
+.end
